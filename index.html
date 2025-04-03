@@ -63,6 +63,26 @@
       background-color: #2ecc71;
     }
 
+    /* Botões ao lado de "Fale conosco Agora" */
+    .hero .btn-container {
+      display: flex;
+      gap: 15px;
+    }
+
+    .hero .btn-container a {
+      background-color: #28a745;
+      color: #fff;
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .hero .btn-container a:hover {
+      background-color: #2ecc71;
+    }
+
     .produtos {
       background-color: #111;
       padding: 60px 20px;
@@ -154,10 +174,13 @@
   <section class="hero">
     <h1>Conserto Profissional de Máquinas de Lavar</h1>
     <p>Atendimento rápido e confiável. Garantia no serviço!</p>
-    <a href="https://wa.me/5519997469206" target="_blank">Fale conosco Agora</a>
+    <div class="btn-container">
+      <a href="https://wa.me/5519997469206" target="_blank">Fale conosco Agora</a>
+      <a href="#produtos">Peças</a> <!-- Este link rola para a seção de produtos -->
+    </div>
   </section>
 
-  <section class="produtos">
+  <section class="produtos" id="produtos"> <!-- Adicionei o id para o link de ancoragem -->
     <h2>Ofertas e Recomendados</h2>
 
     <div class="produto">
@@ -173,7 +196,7 @@
       <a href="https://mercadolivre.com/sec/33anWMV" target="_blank">Ver Oferta</a>
       <p class="afiliado">*Ao comprar, você ajuda a manter nosso serviço sem custo adicional para você, pois somos afiliados.</p>
     </div>
-    
+
     <div class="produto">
       <img src="bomba.jpg" alt="Eletrobomba Askoll 127v">
       <h3>EletroBomba 127v Askoll Drenagem Brastemp Electrolux Consul</h3>
@@ -188,7 +211,7 @@
         <p class="afiliado">*Ao comprar, você ajuda a manter nosso serviço sem custo adicional para você, pois somos afiliados.</p>
       </div>
 
-       <div class="produto">
+      <div class="produto">
         <img src="cambioconsul.jpg" alt="Transmissão Mecanismo Câmbio Lavadora Colormaq Lca 10 A 15kg">
         <h3>Kit Mecanismo Cambio Transmissão Brastemp Consul Cwe09</h3>
         <a href="https://mercadolivre.com/sec/2b8XsqD" target="_blank">Ver Oferta</a>
@@ -214,20 +237,4 @@
   </div>
 
 </body>
-<!-- 
-<script>
-    async function getDescricaoProduto() {
-        const idProduto = "MLB-3471481519"; // Substitua pelo ID correto do produto
-        try {
-            const response = await fetch(`https://api.mercadolibre.com/items/${idProduto}/description`);
-            const data = await response.json();
-            document.getElementById("descricao").innerText = data.plain_text || "Descrição não disponível";
-        } catch (error) {
-            console.error("Erro ao buscar descrição:", error);
-            document.getElementById("descricao").innerText = "Erro ao carregar descrição.";
-        }
-    }
-
-    getDescricaoProduto();
-</script> -->
 </html>
